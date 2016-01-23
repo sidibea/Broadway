@@ -1,0 +1,4 @@
+services:
+#    bw_front.example:
+#        class: BW\FrontBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

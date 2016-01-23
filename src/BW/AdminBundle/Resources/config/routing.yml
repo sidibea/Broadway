@@ -1,0 +1,17 @@
+bw_admin_homepage:
+    path:     /
+    defaults: { _controller: BWAdminBundle:Dasboard:index }
+bw_category_homepage:
+    path:     /categories
+    defaults: { _controller: BWAdminBundle:Category:list }
+bw_add_category_homepage:
+    path:     /add-categories
+    defaults: { _controller: BWAdminBundle:Category:add }
+
+
+bw_products_homepage:
+    path:     /products
+    defaults: { _controller: BWAdminBundle:Products:list }
+bw_add_products_homepage:
+    path:     /add-products
+    defaults: { _controller: BWAdminBundle:Products:add }

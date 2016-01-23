@@ -1,0 +1,343 @@
+{% extends "BWFrontBundle::layout.html.twig" %}
+{% block title %}{{ selected.name }}{% endblock %}
+{% block bodyId %}layout{% endblock %} {% block bodyClass %} {% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <section id="blogwrap">
+            <div class="row-fluid">
+                <div class="span8">
+                    <div class="blog-second-item single">
+                        <div class="row-fluid">
+                            <div class="span5 product-images">
+                                <a data-gal="prettyPhoto[gallery]" href="{{ asset('uploads/products/'~selected.images) }}" title="">
+                                    <img width="350" class="img-polaroid" src="{{ asset('uploads/products/'~selected.images) }}" alt="" />
+                                </a>
+
+
+                            </div>
+                            <div class="span7 product-content">
+                                <h2 class="product-title">{{ selected.name }} <span>{{ selected.price }} FCFA</span></h2>
+                                <p>{{ selected.description }}</p>
+
+                                <div class="price">
+                                    <span class="price-new">{{ selected.price }} FCFA</span>
+                                    <br>
+                                </div>
+                                {{ form_start(form) }}
+
+                                {# Les erreurs générales du formulaire. #}
+                                {{ form_errors(form) }}
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <span class="required">*</span>
+                                        <b>Qte:</b>
+                                        <br>
+                                        {{ form_widget(form.qty, {'attr': {'class': 'span12', 'size': '2', 'value': '1', 'placeholder' : '' }}) }}
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <button type="submit" class="button"><i class="icon-shopping-cart"></i> Ajouter au panier</button>
+                                </p>
+                                {{ form_rest(form) }}
+
+                                {# Fermeture de la balise <form> du formulaire HTML #}
+                                {{ form_end(form) }}
+
+                            </div>
+                        </div>
+                    </div><!-- /blog-second-item -->
+
+
+
+                    <div class="reviews-tabs blog-second-item ">
+                        <ul id="widgetTab2" class="nav nav-tabs">
+                            <li class="active"><a href="#informations" data-toggle="tab">Informations</a></li>
+                            <li><a href="#reviews" data-toggle="tab">Reviews</a></li>
+                        </ul>
+                        <div id="widgetTabcontent2" class="tab-content">
+                            <div class="tab-pane fade in active" id="informations">
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+                                <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Aenean eu leo quam.</p>
+                            </div>
+
+                            <div class="tab-pane fade" id="reviews">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <div class="single-review clearfix">
+                                            <div class="review-header">
+                                                <div class="star-rating" title="">
+                                                    <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span>
+                                                </div>
+                                                <h4>John Doe</h4>
+                                                <small>11/09/2013</small>
+                                            </div><!--end review-header-->
+
+                                            <div class="review-body">
+                                                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                            </div><!--end review-body-->
+                                        </div><!--end single-review-->
+
+                                        <div class="single-review clearfix">
+                                            <div class="review-header">
+                                                <div class="star-rating" title="">
+                                                    <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span>
+                                                </div>
+                                                <h4>John Doe</h4>
+                                                <small>03/11/2013</small>
+                                            </div><!--end review-header-->
+
+                                            <div class="review-body">
+                                                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                            </div><!--end review-body-->
+                                        </div><!--end single-review-->
+
+                                    </div>
+                                    <div class="span6">
+                                        <section class="single-review">
+                                            <h3>Leave a Review</h3>
+
+                                            <form>
+                                                <label for="name">Name</label>
+                                                <input id="name" name="name" class="span9" type="text">
+                                                <label for="email">Email</label>
+                                                <input id="email" name="email" class="span9" type="email">
+                                                <label for="comment">Comment</label>
+                                                <textarea id="comment" name="comment" class="span9" cols="45" rows="5"></textarea>
+                                                <button class="btn btn-general" type="submit">Post a Review</button>
+                                            </form>
+                                            <div class="review-header" style="margin-top:20px;">
+                                                <div class="star-rating" title="">
+                                                    <span style="width:0%"><strong class="rating">4.50</strong> out of 5</span>
+                                                </div>
+                                                <p>What is your rating for this product?</p>
+                                            </div><!--end review-header-->
+                                        </section>
+                                    </div>
+                                </div><!-- /end review row-fluid -->
+                            </div>
+                        </div>
+                    </div><!-- /end review -->
+
+                    <div class="dm-title">
+                        <h2>Related Products</h2>
+                        <span></span>
+                    </div>
+                    <div class="related-woo">
+                        <ul class="products">
+                            <li class="product dmflip sale">
+                                <span class="onsale">Sale!</span>
+                                <a class="hov" href="single-shop.html">
+                                    <img width="600" src="demos/02_store.jpg" class="" alt="" />
+                                    <div class="zoom"></div>
+                                </a>
+
+                                <div class="details">
+                                    <h3>Diamond Perfume</h3>
+                                    <div class="star-rating" title="">
+                                        <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span>
+                                    </div>
+
+								<span class="price">
+									<del><span class="amount">&pound;21.55</span></del>
+									<ins><span class="amount">&pound;12.65</span></ins>
+								</span>
+                                </div><!-- /.details -->
+
+                                <a href="single-shop.html" rel="nofollow" class="button">Add to cart</a>
+                            </li>
+
+                            <li class="product dmflip">
+                                <a class="hov" href="single-shop.html">
+                                    <img width="600" src="demos/05_store.jpg" class="" alt="" />
+                                    <div class="zoom"></div>
+                                </a>
+
+                                <div class="details">
+                                    <h3>Pink Fsuhia</h3>
+                                    <div class="star-rating" title="">
+                                        <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span>
+                                    </div>
+
+								<span class="price">
+									<del><span class="amount">&pound;33.21</span></del>
+									<ins><span class="amount">&pound;21.77</span></ins>
+								</span>
+                                </div><!-- /.details -->
+
+                                <a href="single-shop.html" rel="nofollow" class="button">Add to cart</a>
+                            </li>
+
+                            <li class="product dmflip">
+                                <a class="hov" href="single-shop.html">
+                                    <img width="600" src="demos/04_store.jpg" class="" alt="" />
+                                    <div class="zoom"></div>
+                                </a>
+
+                                <div class="details">
+                                    <h3>Sweet Watch</h3>
+                                    <div class="star-rating" title="">
+                                        <span style="width:40%"><strong class="rating">2.50</strong> out of 5</span>
+                                    </div>
+
+								<span class="price">
+									<del><span class="amount">&pound;23.77</span></del>
+									<ins><span class="amount">&pound;12.31</span></ins>
+								</span>
+                                </div><!-- /.details -->
+
+                                <a href="single-shop.html" rel="nofollow" class="button">Add to cart</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div><!-- end span8 -->
+
+                <div id="sidebar" class="span4">
+
+                    <div class="widget">
+                        <div id="white">
+                            <form method="get" action="http://designingmedia.com/search" id="search">
+                                <input name="q" type="text" size="40" placeholder="Search..." />
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="widget shopping-cart-widget">
+                        <h3>Shopping Cart</h3>
+                        <div class="widget_shopping_cart_content">
+                            <ul class="cart_list product_list_widget ">
+                                <li>
+                                    <a href="#"><img width="123" height="140" alt="" src="demos/12_store.jpg">T90 Nike Cortes</a>
+                                        <span class="quantity">3 ×
+                                        <span class="amount">£12</span>
+                                        </span>
+                                </li>
+                            </ul>
+                            <p class="total">
+                                <strong>Subtotal:</strong>
+                                <span class="amount">£48</span>
+                            </p>
+                            <p class="buttons">
+                                <a href="shopping-cart.html" rel="nofollow" class="button">View Cart →</a>
+                                <a href="checkout.html" rel="nofollow" class="button">Checkout →</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="widget">
+                        <ul id="widgetTab" class="nav nav-tabs">
+                            <li class="active"><a href="#popular" data-toggle="tab">Recent Ratings</a></li>
+                            <li><a href="#recent" data-toggle="tab">Popular Items</a></li>
+                        </ul>
+                        <div id="widgetTabcontent" class="tab-content">
+                            <div class="tab-pane fade in active" id="popular">
+                                <ul class="tabber-posts">
+                                    <li>
+                                        <div class="tabber-thumbnail">
+                                            <a href="#" title="Permalink to this product" rel="bookmark"><img class="img-polaroid" width="90" src="demos/01_store.jpg" alt="" /></a>
+                                        </div><!-- review-thumbnail /-->
+                                        <h3><a href="#" title="Permalink to this product">Nike Cortes T90</a></h3>
+                                        <div class="star-rating" title="">
+                                            <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="tabber-thumbnail">
+                                            <a href="#" title="Permalink to this product" rel="bookmark"><img class="img-polaroid" width="90" src="demos/03_store.jpg" alt="" /></a>
+                                        </div><!-- review-thumbnail /-->
+                                        <h3><a href="#" title="Permalink to this product">Amazing Nike Shoes</a></h3>
+                                        <div class="star-rating" title="">
+                                            <span style="width:70%"><strong class="rating">4.50</strong> out of 5</span>
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+                                        <div class="tabber-thumbnail">
+                                            <a href="#" title="Permalink to this product" rel="bookmark"><img class="img-polaroid" width="90" src="demos/06_store.jpg" alt="" /></a>
+                                        </div><!-- review-thumbnail /-->
+                                        <h3><a href="#" title="Permalink to this product">New Awesome Product</a></h3>
+                                        <div class="star-rating" title="">
+                                            <span style="width:100%"><strong class="rating">4.50</strong> out of 5</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="recent">
+                                <ul class="tabber-posts">
+                                    <li>
+                                        <div class="tabber-thumbnail">
+                                            <a href="#" title="Permalink to this product" rel="bookmark"><img class="img-polaroid" width="90" src="demos/02_store.jpg" alt="" /></a>
+                                        </div><!-- review-thumbnail /-->
+                                        <h3><a href="#" title="Permalink to this product">Nike Cortes T90</a></h3>
+                                        <div class="star-rating" title="">
+                                            <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="tabber-thumbnail">
+                                            <a href="#" title="Permalink to this product" rel="bookmark"><img class="img-polaroid" width="90" src="demos/07_store.jpg" alt="" /></a>
+                                        </div><!-- review-thumbnail /-->
+                                        <h3><a href="#" title="Permalink to this product">Amazing Nike Shoes</a></h3>
+                                        <div class="star-rating" title="">
+                                            <span style="width:70%"><strong class="rating">4.50</strong> out of 5</span>
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+                                        <div class="tabber-thumbnail">
+                                            <a href="#" title="Permalink to this product" rel="bookmark"><img class="img-polaroid" width="90" src="demos/09_store.jpg" alt="" /></a>
+                                        </div><!-- review-thumbnail /-->
+                                        <h3><a href="#" title="Permalink to this product">New Awesome Product</a></h3>
+                                        <div class="star-rating" title="">
+                                            <span style="width:100%"><strong class="rating">4.50</strong> out of 5</span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /end widget -->
+
+                    <div class="widget">
+                        <div class="dm-title">
+                            <h3>Twitter Stream</h3>
+                            <span></span>
+                        </div>
+                        <ul class="tw-widget">
+                            <li>
+                                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below....<br>
+                                    <a title="" href="#"><i class="icon-mail-forward"></i> Retweet</a> <a title="" href="#"><i class="icon-twitter"></i> designingmedia</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>TCicero are also reproduced in their exact original form, accompanied. Donec id elit non mi porta gravida at eget metus.<br>
+                                    <a title="" href="#"><i class="icon-mail-forward"></i> Retweet</a> <a title="" href="#"><i class="icon-twitter"></i> designingmedia</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div><!--/widget-->
+
+                    <div class="widget">
+                        <div class="dm-title">
+                            <h2>About Flayz</h2>
+                            <span></span>
+                        </div>
+                        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied. Donec id elit non mi porta gravida at eget metus.</p>
+                        <a class="btn btn-general" href="#">Learn more</a>
+                    </div><!-- /end widget -->
+
+                </div><!-- /span4 sidebar -->
+
+            </div><!-- /row-fluid -->
+        </section><!-- /container -->
+    </div><!-- /box -->
+
+{% endblock %}

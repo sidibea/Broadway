@@ -1,0 +1,77 @@
+{% extends "BWFrontBundle::layout.html.twig" %}
+{% block title %}{{ selected.name }}{% endblock %}
+{% block bodyId %}layout{% endblock %} {% block bodyClass %} {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <section id="blogwrap">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="blog-second-item single">
+                        <h3 class="post-title">{{ selected.name }}</h3>
+                        <div class="row-fluid">
+                            <div class="span9">
+                                <p class="woocommerce-result-count">  {{ products |length }} resultats trouves</p>
+                            </div>
+
+                            <div class="span3">
+                                <form>
+                                    <select>
+                                        <option value="menu_order" >Default sorting</option>
+                                        <option value="popularity" >Sort by popularity</option>
+                                        <option value="rating" >Sort by average rating</option>
+                                        <option value="date" >Sort by newness</option>
+                                        <option value="price" >Sort by price: low to high</option>
+                                        <option value="price-desc" >Sort by price: high to low</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                        <ul class="products">
+                            {% for key, val in products %}
+                            <li class="product dmflip sale">
+                                <a class="hov" href="{{ path('bw_front_single_shop', {'id': val.id}) }}">
+                                    <img width="600" src="{{ asset('uploads/products/'~val.images) }}" style="width: 300px; height: 200px; "  class="" alt="" />
+                                    <div class="zoom"></div>
+                                </a>
+
+                                <div class="details">
+                                    <h3>{{ val.name }}</h3>
+                                    <div class="star-rating" title="">
+                                        <span style="width:90%"><strong class="rating">4.50</strong> out of 5</span>
+                                    </div>
+
+								<span class="price">
+
+									<ins><span class="amount">{{ val.price }} FCFA </span></ins>
+								</span>
+                                </div><!-- /.details -->
+
+                                <a href="{{ path('bw_front_single_shop', {'id': val.id}) }}" rel="nofollow" class="button">Ajouter au panier</a>
+                            </li>
+                                {% endfor %}
+
+
+                        </ul>
+
+                        <div class="clearfix"></div>
+
+                        <div class="pagination text-center">
+                            <ul>
+                                <li class="disabled"><a href="#">«</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">»</a></li>
+                            </ul>
+                        </div>
+
+                    </div><!-- /blog-second-item -->
+                </div><!-- end span12 -->
+            </div><!-- /row-fluid -->
+        </section><!-- /container -->
+    </div><!-- /box -->
+
+{% endblock %}

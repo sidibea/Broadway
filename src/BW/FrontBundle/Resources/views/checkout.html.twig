@@ -1,0 +1,70 @@
+{% extends "BWFrontBundle::layout.html.twig" %}
+{% block title %}Commandes{% endblock %}
+{% block bodyId %}layout{% endblock %} {% block bodyClass %} {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <section id="blogwrap">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div >
+                        <h3 class="accordion-toggle" >
+                            Confirmer votre commande
+                        </h3>
+
+                        <div class="accordion-inner">
+                            <table class="table wishlist table-hover table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="span2">Image</th>
+                                    <th class="span3">Produit</th>
+                                    <th class="span1">Quantity</th>
+                                    <th class="span3">Prix</th>
+                                    <th class="span2">Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% set total = 0 %}
+                                {% for key, val in cart %}
+
+                                <tr>
+                                    <td class="image"><a href="product.html"><img title="product" alt="product" src="{{ asset('uploads/products/'~val.products.images) }}" width="100"></a></td>
+                                    <td class="product"><a href="product.html" title="Example Product">{{ val.products.name }}</a> </td>
+                                    <td class="stock">{{ val.quantity }}</td>
+                                    <td class="price"> <b>{{ val.products.price }} FCFA</b></td>
+                                    <td class="price"><b> {{ val.products.price * val.quantity }} FCFA{% set total = total + (val.products.price * val.quantity) %}</b></td>
+                                </tr>
+                                {% endfor %}
+
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td class="price" colspan="4"><b>Sous-Total:</b></td>
+                                    <td class="total">{{ total }} FCFA</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="price" colspan="4"><b>Frais de livraison:</b></td>
+                                    <td class="total">500 FCFA</td>
+                                </tr>
+                                <tr>
+                                    <td class="price" colspan="4"><b>Total:</b></td>
+                                    <td class="total">{{ total + 500 }} FCFA</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <div class="right">
+                                <a href="{{ path('bw_front_order') }}" class="btn btn-general">Commander</a> <a href="{{ path('bw_front_homepage') }}" class="btn btn-general">Continuer vos achats</a>
+
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div><!-- end span8 -->
+
+
+            </div><!-- /row-fluid -->
+        </section><!-- /container -->
+    </div><!-- /box -->
+{% endblock %}

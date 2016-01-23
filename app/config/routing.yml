@@ -1,0 +1,28 @@
+bw_admin:
+    resource: "@BWAdminBundle/Resources/config/routing.yml"
+    prefix:   /administration
+
+
+bw_users:
+    resource: "@BWUsersBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bw_front:
+    resource: "@BWFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login:
+    path:   /login
+    defaults:  { _controller: BWUsersBundle:Security:login }
+
+
+
+login_check:
+    path:   /login_check
+
+logout:
+    path:   /logout
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+

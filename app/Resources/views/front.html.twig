@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<!-- RabinsXP.com HTML5 Templates -->
+<head>
+    <meta charset="utf-8">
+
+    <title>{% block title %} {% endblock %} > Broadway Cafe</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- http://www.456bereastreet.com/archive/201209/tell_css_that_javascript_is_available_asap/ -->
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1js$2');
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ asset('front/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/style.css') }}">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="{{ asset('front/rs-plugin/css/settings.css') }}">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="{{ asset('front/css/font-awesome-ie7.min.css') }}">
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="{{ asset('front/js/html5shiv.min.js') }}"></script>
+    <![endif]-->
+    <script src="{{ asset('front/js/modernizr.custom.js') }}"></script>
+
+</head>
+<body id="{% block bodyId %}custom1{% endblock %} "   class="{% block bodyClass %}home{% endblock %}" >
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;
+    </div>
+</div>
+<div id="wrapper">
+
+    <div id="pocp1" class="pocp_right">
+        <div class="pocp"><!-- BEGIN PANEL CONTAINER -->
+            <div class="pocp_content"><!-- BEGIN PANEL INNER CONTENT -->
+                <h2>Text Widget</h2>
+                <p>This widget uses a different effect when activated. You can choose the position and the behavior of this panel.</p>
+                <ul>
+                    <li>Fusce nunc augue</li>
+                    <li>Sodales sit amet.</li>
+                    <li>Venenatis porttitor dui</li>
+                    <li>Nunc eros ante</li>
+                </ul>
+
+                <p>In this panel you can add nested toggle elements to show or hide secondary informations.</p>
+
+                <ul class="pocp_toggle">
+                    <li>
+                        <span class="pocp_toggle_title"><i class="icon-plus"></i>About Us</span>
+                        <div class="pocp_panel">
+                            <p>Aliquam orci velit, auctor tincidunt erat a, pulvinar tristique magna. Praesent sed sagittis tortor, non imperdiet nulla.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="pocp_toggle_title"><i class="icon-plus"></i>Team</span>
+                        <div class="pocp_panel">
+                            <p>Nunc nisi lacus, porttitor quis dignissim ac, interdum vel ante. Duis ultricies odio eu.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="pocp_toggle_title"><i class="icon-plus"></i>Levels</span>
+                        <div class="pocp_panel pocp_panel_parent">
+                            <ul class="pocp_toggle">
+                                <li>
+                                    <span class="pocp_toggle_title"><i class="icon-plus"></i>Level 2</span>
+                                    <div class="pocp_panel">
+                                        <p>Donec vel eleifend urna. Nunc a viverra massa.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="pocp_toggle_title"><i class="icon-plus"></i>Level 2</span>
+                                    <div class="pocp_panel">
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="pocp_toggle_title"><i class="icon-plus"></i>Portfolio</span>
+                        <div class="pocp_panel">
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames turpis.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>Styled Elements</h2>
+                <p>This item includes many styled elements such as headers, paragraphs, lists, etc.</p>
+                <p class="dark">This is a text contained into a <strong>dark</strong> container with a border.</p>
+                <p class="brown">This is a text contained into a <strong>brown</strong> container with a border.</p>
+                <p class="yellow">This is a text contained into a <strong>yellow</strong> container with a border.</p>
+                <p class="red">This is a text contained into a <strong>red</strong> container with a border.</p>
+                <p class="blue">This is a text contained into a <strong>blue</strong> container with a border.</p>
+                <p class="green">This is a text contained into a <strong>green</strong> container with a border.</p>
+
+                <h2>Video</h2>
+                <p>Ut ligula nibh, tincidunt et dolor vitae, bibendum lectus, et tempus lorem lobortis consectetur neque.</p>
+                <div class="video_container">
+                    <iframe src="http://player.vimeo.com/video/32001208?portrait=0&amp;badge=0"></iframe>
+                </div>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada.</p>
+            </div><!-- END PANEL INNER CONTENT -->
+        </div><!-- END PANEL CONTAINER -->
+    </div><!-- END PULL OUT CONTENT PANEL -->
+
+    {% block topnav %}
+        {% include('includes/topnav.html.twig') %}
+    {% endblock %}
+
+    <header id="dmheader">
+        {% block header %}
+            {% include('includes/header.html.twig') %}
+        {% endblock %}
+
+    </header><!-- /dmheader -->
+
+    {% block content %} {% endblock %}
+
+
+
+
+    <div id="dmfooter">
+        {% block footer %}
+            {% include('includes/footer.html.twig') %}
+        {% endblock %}
+
+    </div><!-- dmfooter -->
+
+    <div id="lastcontainer">
+        <div class="container">
+            <p>Copyright © {{ "now" | date('Y') }} neXt Computing Technology, Inc.</p>
+        </div><!-- /container -->
+    </div><!-- /lastcontainer -->
+
+    <div class="dmtop">Scroll to Top</div>
+</div><!-- /wrapper -->
+
+
+<!-- ALL PLUGINS -->
+<script src="{{ asset('front/js/jquery.js') }}"></script>
+<!-- RS PLUGINS -->
+<script type="text/javascript" src="{{ asset('front/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('front/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+<script type="text/javascript">
+    var revapi;
+    jQuery(document).ready(function() {
+        revapi = jQuery('.tp-banner').revolution(
+                {
+
+                    delay:9000,
+                    startwidth:1170,
+                    startheight:530,
+                    hideThumbs:10,
+                    fullWidth:"on",
+                    forceFullWidth:"on",
+                    navigationType:"none",
+                    navigationStyle:"round",
+                    touchenabled:"on",
+                    onHoverStop:"off",
+                    shadow:0,
+                    stopLoop:"off",
+                    stopAfterLoops:-1,
+                    stopAtSlide:-1,
+                    shuffle:"off",
+                });
+    });
+</script>
+
+<script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.prettyPhoto.js') }}"></script>
+<script src="{{ asset('front/js/grid.js') }}"></script>
+<script src="{{ asset('front/js/pulloutpanel.min.js') }}"></script>
+<script src="{{ asset('front/js/superfish.js') }}"></script>
+<script src="{{ asset('front/js/jquery.fs.naver.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.flexslider.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('front/js/custom.js') }}"></script>
+<!-- Preloader -->
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#status').delay(800).fadeOut('slow');
+        $('#preloader').delay(800).fadeOut('slow');
+        $('body').delay(800).css({'overflow':'visible'});
+    })
+</script>
+</body>
+
+<!-- RabinsXP.com HTML5 Templates -->
+</html>

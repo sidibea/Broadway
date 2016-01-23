@@ -1,0 +1,23 @@
+bw_front_homepage:
+    path:     /
+    defaults: { _controller: BWFrontBundle:Front:index }
+
+bw_front_category_list:
+    path:     /category-list/{id}
+    defaults: { _controller: BWFrontBundle:Front:productlist }
+
+bw_front_cart:
+    path:     /addtocart/{id}/{qty}
+    defaults: { _controller: BWFrontBundle:Front:cart }
+bw_front_view_cart:
+    path:     /viewcart
+    defaults: { _controller: BWFrontBundle:Front:viewcart }
+bw_front_single_shop:
+    path:     /single-shop/{id}
+    defaults: { _controller: BWFrontBundle:Front:details }
+bw_front_checkout:
+    path:     /checkout
+    defaults: { _controller: BWFrontBundle:Front:checkout }
+bw_front_order:
+    path:     /orders
+    defaults: { _controller: BWFrontBundle:Front:orders }

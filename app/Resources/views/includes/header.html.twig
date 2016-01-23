@@ -1,0 +1,58 @@
+<div class="container">
+    <div id="dmtop">
+        <a class="cssLogo" href="{{ path('bw_front_homepage') }}">Flayz</a>
+        <nav id="cp-nav">
+            <ul class="flexnav" data-breakpoint="800">
+                <li class="current"><a href="{{ path('bw_front_homepage') }}">Acceuil</a> </li>
+                <li><a href="#">Nos Menus</a>
+                    <ul>
+                        {% for key, val in categories %}
+
+                        <li><a href="{{ path('bw_front_category_list', {'id': val.id}) }}">{{ val.name }}</a></li>
+
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="#">Portfolio</a>
+                    <ul>
+                        <li><a href="portfolio-filter.html">Portfolio With Filter</a></li>
+                        <li><a href="portfolio-without-filter.html">Portfolio Without Filter</a></li>
+                        <li><a href="portfolio-single-1.html">Portfolio Single #1</a></li>
+                        <li><a href="portfolio-single-2.html">Portfolio Single #2</a></li>
+                    </ul>
+                </li>
+                <li>
+                <li><a href="shop.html">Shop</a>
+                    <ul>
+                        <li><a href="shop.html">Category List</a></li>
+                        <li><a href="single-shop.html">Single Shop</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="login.html">Register Page</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="lost-password.html">Lost Password</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Features</a>
+                    <ul>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="shortcodes.html">Shortcodes</a></li>
+                        <li><a href="columns.html">Columns</a></li>
+                        <li><a href="icons.html">Retina Icons</a></li>
+                        <li><a href="pricing-tables.html">Pricing Tables</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a>
+                    <ul>
+                        <li><a href="single.html">Single Blog</a></li>
+                        <li><a href="blog-1.html">Blog Variation #1</a></li>
+                        <li><a href="blog-2.html">Blog Variation #2</a></li>
+                        <li><a href="blog-3.html">Blog Variation #3</a></li>
+                        <li><a href="blog-4.html">Blog Variation #4</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav><!-- end #cp-nav -->
+    </div><!-- /dmtop -->
+</div><!-- /container -->
