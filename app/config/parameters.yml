@@ -2,11 +2,11 @@
 parameters:
     database_host: mysql.hostinger.co.uk
     database_port: null
-    database_name: u902301605_brod
-    database_user: u902301605_brod
+    database_name: u183890455_broad
+    database_user: u183890455_broad
     database_password: sorofing
     mailer_transport: smtp
-    mailer_host: 127.0.0.1
+    mailer_host: sidibeskouassane.ml
     mailer_user: null
     mailer_password: null
     secret: 603a4635fdab58589cba7abe2479bd95113273e2
